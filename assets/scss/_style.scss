@@ -1,0 +1,17 @@
+.text-primary { color: var(--sena-primary) !important; }
+.text-secondary { color: var(--sena-secondary) !important; }
+.text-tertiary { color: var(--sena-tertiary) !important; }
+
+.text-whatsapp { color: #00a369 !important; }
+
+.bg-whatsapp { background: #00a369 !important; }
+.bg-overlay { background: rgba(0, 0, 0, 0.1); }
+
+.grad-whatsapp {
+  background: rgba(0, 163, 105, 1);
+  background: linear-gradient(180deg,rgba(0, 163, 105, 1) 0%, rgb(0, 185, 120) 100%);
+}
+
+.ff-el-form-control, .choices__inner, .choices__list--dropdown, .choices__input {
+  border-radius: 8px !important;
+}

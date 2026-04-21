@@ -1,0 +1,23 @@
+.btn {
+  height: 44px;
+  font-weight: 400;
+  border-radius: 10px 15px;
+  &.btn-icon {
+    width: 44px;
+    padding: 10px 10px !important;
+  }
+}
+
+.btn:not(.btn-sm):not(.btn-lg) {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.btn-whatsapp {
+  background: #009779;
+  color: white;
+  &:hover {
+    background: #007e65;
+  }
+}

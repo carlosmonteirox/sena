@@ -1,0 +1,17 @@
+/*
+Theme Name: Sena Campanha 2026
+Theme URI: https://example.com/sena
+Author: Equipe Sena
+Author URI: https://example.com
+Description: Tema institucional de campanha para Ulysses Sena - CREA-GO 2026, com estrutura modular em template-parts/inc e Bootstrap.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: sena
+*/
+
+/*
+ * O CSS principal é carregado em assets/css/main.css
+ * Este arquivo mantém o cabeçalho do tema para o WordPress.
+ */
