@@ -75,6 +75,19 @@
   }
 }
 
+.card-candidatos {
+    border-radius: var(--site-radius);
+    background: var(--sena-white);
+    box-shadow: 0 18px 45px -34px rgba(15, 23, 42, 0.55);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.72);
+    }
+  }
+
 /* Manifesto */
 #manifesto {
   position: relative;
@@ -300,7 +313,7 @@
 
 /* Propostas */
 .proposta-section {
-  background: linear-gradient(180deg, rgba(243, 248, 255, 0.4) 0%, #fff 100%);
+  // background: linear-gradient(180deg, rgba(243, 248, 255, 0.4) 0%, #fff 100%);
 
   .proposal-grid {
     display: grid;
@@ -336,7 +349,8 @@
 
       .proposal-kicker,
       .proposal-title,
-      .proposal-text {
+      .proposal-text,
+      .proposal-cta {
         color: var(--sena-white);
       }
 
@@ -382,6 +396,16 @@
     background: var(--sena-white);
   }
 
+  .proposal-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+  }
+
   .proposal-card-top {
     position: relative;
     z-index: 2;
@@ -409,9 +433,19 @@
     line-height: 1;
   }
 
+  .proposal-term {
+    max-width: calc(100% - 62px);
+    color: var(--sena-blue-700);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: right;
+  }
+
   .proposal-kicker,
   .proposal-title,
-  .proposal-text {
+  .proposal-text,
+  .proposal-cta {
     position: relative;
     z-index: 2;
   }
@@ -438,6 +472,11 @@
     color: var(--sena-gray-700);
     font-size: 15px;
     line-height: 1.45;
+  }
+
+  .proposal-cta {
+    color: var(--sena-blue-700);
+    font-weight: 700;
   }
 
   .proposal-image-card {
@@ -474,7 +513,8 @@
 
     .proposal-kicker,
     .proposal-title,
-    .proposal-text {
+    .proposal-text,
+    .proposal-cta {
       color: var(--sena-white);
     }
 
@@ -492,6 +532,26 @@
     position: relative;
     z-index: 2;
     padding: 24px;
+  }
+}
+
+.single-proposta-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 12px;
+    border: 1px solid #dce4f0;
+    border-radius: 999px;
+    color: var(--sena-blue-700);
+    background: #eef8fe;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
   }
 }
 

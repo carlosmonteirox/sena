@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-lg-0 mb-3">
-          <div class="card border-0 rounded-4 overflow-hidden h-100">
+          <div class="card card-candidatos border-0 rounded-4 overflow-hidden h-100">
             <div class="d-flex align-items-end h-100">
               <div class="flex-shrink-1 px-3 mt-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/joel-kruger.webp" height="70" alt="">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-lg-0 mb-3">
-          <div class="card border-0 rounded-4 overflow-hidden h-100">
+          <div class="card card-candidatos border-0 rounded-4 overflow-hidden h-100">
             <div class="d-flex align-items-end">
               <div class="flex-shrink-1 px-3 mt-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aquila-levindo.webp" height="70" alt="">
@@ -48,7 +48,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-lg-0 mb-3">
-          <div class="card border-0 rounded-4 overflow-hidden h-100">
+          <div class="card card-candidatos border-0 rounded-4 overflow-hidden h-100">
             <div class="d-flex align-items-end">
               <div class="flex-shrink-1 px-3 mt-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/eloah-lellis.webp" height="70" alt="">
@@ -62,7 +62,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 mb-lg-0 mb-3">
-          <div class="card border-0 rounded-4 overflow-hidden h-100">
+          <div class="card card-candidatos border-0 rounded-4 overflow-hidden h-100">
             <div class="d-flex align-items-end">
               <div class="flex-shrink-1 px-3 mt-2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/andreia-gomes.webp" height="70" alt="">

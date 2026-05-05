@@ -62,6 +62,17 @@ function sena_register_campaign_cpts(): void
 }
 add_action('init', 'sena_register_campaign_cpts');
 
+function sena_order_propostas_archive_by_registration(WP_Query $query): void
+{
+    if (is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive('sena_proposta')) {
+        return;
+    }
+
+    $query->set('orderby', 'ID');
+    $query->set('order', 'ASC');
+}
+add_action('pre_get_posts', 'sena_order_propostas_archive_by_registration');
+
 function sena_add_default_proposta_terms(): void
 {
     $terms = [

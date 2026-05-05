@@ -10,71 +10,54 @@ if (! defined('ABSPATH')) {
 }
 
 $query = $args['query'] ?? null;
-
-$fallback = [
-    [
-        'title'   => 'Valorização profissional',
-        'text'    => 'Defesa da categoria e ampliação de oportunidades para engenheiros e profissionais técnicos.',
-        'icon'    => 'bi bi-award',
-        'url'     => home_url('/propostas/'),
-    ],
-    [
-        'title'   => 'Fiscalização eficiente',
-        'text'    => 'Ações inteligentes para fortalecer o exercício legal da profissão e proteger a sociedade.',
-        'icon'    => 'bi bi-shield-check',
-        'url'     => home_url('/propostas/'),
-    ],
-    [
-        'title'   => 'Desburocratização do CREA',
-        'text'    => 'Processos mais ágeis, transparentes e orientados por dados para reduzir entraves.',
-        'icon'    => 'bi bi-diagram-3',
-        'url'     => home_url('/propostas/'),
-    ],
-    [
-        'title'   => 'Inovação tecnológica',
-        'text'    => 'Digitalização de serviços e novas ferramentas para melhorar a experiência do profissional.',
-        'icon'    => 'bi bi-cpu',
-        'url'     => home_url('/propostas/'),
-    ],
-    [
-        'title'   => 'Fortalecimento das entidades',
-        'text'    => 'Integração regional com associações, sindicatos e lideranças da engenharia em Goiás.',
-        'icon'    => 'bi bi-people',
-        'url'     => home_url('/propostas/'),
-    ],
-];
+$col_class = isset($args['col_class']) ? (string) $args['col_class'] : 'col-md-6 col-xl-4';
+$empty_message = isset($args['empty_message']) ? (string) $args['empty_message'] : __('Nenhuma proposta publicada ainda.', 'sena');
+$accent_colors = ['#fac607', '#00bef8', '#10af8f', '#004cb2'];
+$use_custom_query = $query instanceof WP_Query;
+$has_posts = $use_custom_query ? $query->have_posts() : have_posts();
+$loop_index = 0;
 ?>
 
-<div class="row g-4">
-    <?php if ($query instanceof WP_Query && $query->have_posts()) : ?>
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="col-md-6 col-xl-4" data-reveal>
-                <article class="proposal-card h-100">
-                    <a href="<?php the_permalink(); ?>" class="proposal-link">
-                        <div class="proposal-inner h-100">
-                            <span class="proposal-icon"><i class="bi bi-lightning-charge"></i></span>
-                            <h3 class="h5 fw-semibold mt-3 mb-2"><?php the_title(); ?></h3>
-                            <p class="text-muted mb-3"><?php echo esc_html(get_the_excerpt() ?: wp_trim_words(get_the_content(), 20, '...')); ?></p>
-                            <span class="small">Ler proposta <i class="bi bi-arrow-right-short"></i></span>
+<div class="row g-4 proposal-list mb-5">
+    <?php if ($has_posts) : ?>
+        <?php while ($use_custom_query ? $query->have_posts() : have_posts()) : ?>
+            <?php
+            if ($use_custom_query) {
+                $query->the_post();
+            } else {
+                the_post();
+            }
+
+            $terms = get_the_terms(get_the_ID(), 'proposta_tema');
+            $term_name = (! empty($terms) && ! is_wp_error($terms)) ? $terms[0]->name : __('Proposta', 'sena');
+            $accent = $accent_colors[$loop_index % count($accent_colors)];
+            ?>
+            <div class="<?php echo esc_attr($col_class); ?>" data-reveal>
+                <article <?php post_class('proposal-card h-100'); ?> style="--proposal-accent: <?php echo esc_attr($accent); ?>;">
+                    <a href="<?php the_permalink(); ?>" class="proposal-inner proposal-link h-100">
+                        <div class="proposal-card-top">
+                            <span class="proposal-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+                            <span class="proposal-term fw-normal"><?php echo esc_html($term_name); ?></span>
                         </div>
+                        <div>
+                            <p class="proposal-kicker mb-2"><?php esc_html_e('Proposta', 'sena'); ?></p>
+                            <h3 class="proposal-title"><?php the_title(); ?></h3>
+                            <p class="proposal-text mb-0"><?php echo esc_html(get_the_excerpt() ?: wp_trim_words(get_the_content(), 24, '...')); ?></p>
+                        </div>
+                        <span class="proposal-cta small fw-normal"><?php esc_html_e('Ler proposta', 'sena'); ?> <i class="bi bi-arrow-right-short" aria-hidden="true"></i></span>
                     </a>
                 </article>
             </div>
+            <?php $loop_index++; ?>
         <?php endwhile; ?>
     <?php else : ?>
-        <?php foreach ($fallback as $item) : ?>
-            <div class="col-md-6 col-xl-4" data-reveal>
-                <article class="proposal-card h-100">
-                    <a href="<?php echo esc_url($item['url']); ?>" class="proposal-link">
-                        <div class="proposal-inner h-100">
-                            <span class="proposal-icon"><i class="<?php echo esc_attr($item['icon']); ?>"></i></span>
-                            <h3 class="h5 fw-semibold mt-3 mb-2"><?php echo esc_html($item['title']); ?></h3>
-                            <p class="text-muted mb-3"><?php echo esc_html($item['text']); ?></p>
-                            <span class="small">Ver detalhes <i class="bi bi-arrow-right-short"></i></span>
-                        </div>
-                    </a>
-                </article>
-            </div>
-        <?php endforeach; ?>
+        <div class="col-12" data-reveal>
+            <div class="alert alert-primary border-0 rounded-3 mb-0"><?php echo esc_html($empty_message); ?></div>
+        </div>
     <?php endif; ?>
 </div>
+<?php
+if ($use_custom_query) {
+    wp_reset_postdata();
+}
+?>
