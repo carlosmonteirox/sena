@@ -19,7 +19,7 @@ $propostas = [
         'class'       => 'proposal-card--hero',
     ],
     [
-        'kicker'      => 'Combate aos leigos',
+        'kicker'      => 'Valorização do profissional habilitado',
         'title'       => 'Chega de leigos na engenharia',
         'description' => 'Fiscalização em todo o estado para proteger quem é habilitado.',
         'icon'        => 'bi bi-shield-check',
