@@ -31,7 +31,7 @@ if (! defined('ABSPATH')) {
                     <p class="mb-3">
                         Sua proposta é unir experiência prática, visão de gestão e conhecimento institucional para construir um CREA mais ágil, transparente e conectado à realidade de quem atua no mercado.
                     </p>
-                    <a class="btn btn-primary mt-3" href="<?php echo esc_url(home_url('/sobre-ulysses/')); ?>">
+                    <a class="btn btn-primary mt-3" href="<?php echo esc_url(home_url('/sobre/')); ?>">
                         Conheça a trajetória completa
                     </a>
                 </div>
