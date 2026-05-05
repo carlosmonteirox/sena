@@ -65,24 +65,14 @@ $pillars = [
                         valorização profissional e uma gestão preparada para transformar o conselho em uma ferramenta
                         real de apoio aos profissionais.
                     </p>
-
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="<?php echo esc_url(home_url('/propostas/')); ?>" class="btn btn-primary">
-                            Conheça as propostas
-                        </a>
-
-                        <a href="#trajetoria" class="btn btn-outline-primary">
-                            Ver trajetória
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-lg-6" data-reveal>
                     <div class="sobre-hero-card">
-                        <img src="<?php echo esc_url($hero_image); ?>" alt="Ulysses Sena">
+                        <img src="<?php echo esc_url($hero_image); ?>" alt="Ulysses Sena" class="img-fluid rounded-4 mb-3">
                         <div class="sobre-hero-overlay">
                             <p class="proposal-kicker mb-2">Um novo CREA para Goiás</p>
-                            <h2>Engenharia forte. Profissionais valorizados.</h2>
+                            <h2><span style="color: var(--sena-secondary);">Engenharia forte.</span> <span style="color: var(--sena-tertiary);">Profissionais valorizados.</span></h2>
                         </div>
                     </div>
                 </div>
