@@ -29,7 +29,7 @@ $news_query = sena_query_posts([
             <?php
             get_template_part('template-parts/loops/loop', 'news-cards', [
                 'query'         => $news_query,
-                'empty_message' => 'Publique notícias no WordPress para preencher esta seção automaticamente.',
+                'empty_message' => 'Publique posts para preencher esta seção automaticamente.',
             ]);
             ?>
 

@@ -17,15 +17,15 @@ if (! defined('ABSPATH')) {
 
                 <div class="col-lg-6 py-md-5 py-4 hero-txt">
                     <p class="eyebrow text-primary mb-3" data-reveal>Ulysses Sena • Candidato à Presidência do CREA-GO 2026</p>
-                    <h1 class="hero-title text-primary mb-4" data-reveal>
+                    <h1 class="hero-title text-primary mb-md-4 mb-0" data-reveal>
                         Engenharia forte.<br>
                         Profissionais valorizados.<br>
                         <span class="fw-style text-secondary">Um novo CREA para Goiás.</span>
                     </h1>
-                    <p class="hero-subtitle text-dark mb-4" data-reveal>
+                    <p class="hero-subtitle text-dark mb-md-4 mb-0 d-md-inline-block d-none" data-reveal>
                         Conheça as ações que vão transformar e aproximar a classe.
                     </p>
-                    <div class="d-flex flex-wrap gap-3" data-reveal>
+                    <div class="d-flex flex-wrap gap-3 d-md-inline-block d-none" data-reveal>
                         <a class="btn btn-primary" href="<?php echo esc_url(home_url('/propostas/')); ?>">Conheça as propostas</a>
                         <a class="btn btn-light" href="#engaje">Participe do movimento</a>
                     </div>
@@ -39,3 +39,12 @@ if (! defined('ABSPATH')) {
         </div>
     </div>
 </section>
+
+<div class="line-design" style="height: 2px;">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>

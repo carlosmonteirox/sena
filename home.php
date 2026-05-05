@@ -18,7 +18,7 @@ get_header();
         <div class="mt-4">
             <?php get_template_part('template-parts/loops/loop', 'news-cards'); ?>
         </div>
-        <nav class="mt-4" aria-label="Paginação de notícias" data-reveal>
+        <nav class="my-4" aria-label="Paginação de notícias">
             <?php
             the_posts_pagination([
                 'mid_size'  => 1,

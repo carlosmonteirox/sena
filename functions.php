@@ -10,6 +10,7 @@ if (! defined('ABSPATH')) {
 }
 
 $theme_include_files = [
+    'admin.php',
     'setup.php',
     'assets.php',
     'helpers.php',
@@ -20,16 +21,9 @@ $theme_include_files = [
 ];
 
 foreach ($theme_include_files as $file) {
-    $candidates = [
-        'inc/' . $file,
-        '_functions/' . $file, // Backward compatibility during refactor.
-    ];
+    $path = get_template_directory() . '/inc/' . $file;
 
-    foreach ($candidates as $candidate) {
-        $path = get_template_directory() . '/' . $candidate;
-        if (file_exists($path)) {
-            require_once $path;
-            break;
-        }
+    if (file_exists($path)) {
+        require_once $path;
     }
 }

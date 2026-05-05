@@ -15,3 +15,49 @@
 .ff-el-form-control, .choices__inner, .choices__list--dropdown, .choices__input {
   border-radius: 8px !important;
 }
+
+.site-breadcrumb {
+  color: var(--sena-gray-500);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.site-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.site-breadcrumb-item + .site-breadcrumb-item::before {
+  content: "/";
+  color: var(--sena-gray-500);
+  opacity: 0.65;
+}
+
+.site-breadcrumb a {
+  color: var(--sena-blue-700);
+}
+
+.site-breadcrumb a:hover,
+.site-breadcrumb a:focus {
+  color: var(--sena-blue-800);
+}
+
+.site-breadcrumb span {
+  color: var(--sena-gray-700);
+}
+
+.text-center .site-breadcrumb-list {
+  justify-content: center;
+}

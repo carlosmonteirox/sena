@@ -12,7 +12,10 @@
             <p class="m-0">Você vai receber direto no seu WhatsApp as minhas mensagens com informações obte o meu trabalho,</p>
           </div>
           <div class="p-4">
-            <a class="btn btn-light">Participar</a>
+            <a class="btn btn-light"
+              href="<?php echo esc_url(sena_whatsapp_link()); ?>" 
+              target="_blank" 
+              rel="noopener noreferrer">Participar</a>
           </div>
         </div>
         </div>

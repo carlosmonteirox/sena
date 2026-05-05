@@ -43,7 +43,7 @@ if (have_posts()) {
         </div>
 
         <?php if ((int) $news_query->max_num_pages > 1) : ?>
-            <nav class="mt-4" aria-label="Paginação de notícias" data-reveal>
+            <nav class="my-4" aria-label="Paginação de notícias">
                 <?php
                 echo wp_kses_post(
                     paginate_links([

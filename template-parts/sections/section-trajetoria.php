@@ -10,13 +10,25 @@ if (! defined('ABSPATH')) {
 }
 
 $timeline = [
-    ['periodo' => '2001', 'titulo' => 'Formação acadêmica', 'descricao' => 'Início da trajetória técnica com foco em excelência profissional e compromisso público.'],
-    ['periodo' => '2008', 'titulo' => 'Atuação profissional', 'descricao' => 'Consolidação da atuação no setor e liderança em equipes multidisciplinares.'],
-    ['periodo' => '2016', 'titulo' => 'Conquistas institucionais', 'descricao' => 'Participação ativa em iniciativas de modernização e valorização da engenharia.'],
-    ['periodo' => '2026', 'titulo' => 'Liderança para o CREA-GO', 'descricao' => 'Proposta de gestão conectada às demandas reais dos profissionais.'],
+    ['periodo' => '2013', 
+        'titulo' => 'Base técnica sólida', 
+        'descricao' => 'Engenheiro Civil pela PUC-GO, com especialização e compromisso com a engenharia de verdade.'
+    ],
+    ['periodo' => '2013 - 2026', 
+        'titulo' => 'Vivência de quem faz', 
+        'descricao' => 'Atuação em obras, gestão pública e setor privado, com liderança e entrega de resultados.'
+    ],
+    ['periodo' => '2019', 
+        'titulo' => 'Conhece por dentro', 
+        'descricao' => 'Conselheiro, Assessor e Chefe de Gabinete, com experiência direta no funcionamento do CREA.'
+    ],
+    ['periodo' => '2026', 
+        'titulo' => 'Preparado para transformar', 
+        'descricao' => 'Uma gestão moderna, com menos burocracia e mais valorização do profissional.'
+    ],
 ];
 ?>
-<section id="trajetoria" class="section-space section-gradient py-md-5 py-4">
+<section id="trajetoria" class="section-space section-gradient py-md-5 py-4" style="background: #062c72;">
     <div class="container-fluid py-md-5 py-4">
         <div class="container position-relative z-3">
             <div class="row g-5 align-items-start">
@@ -31,9 +43,9 @@ $timeline = [
                     <div class="timeline">
                         <div class="row">
                             <?php foreach ($timeline as $item) : ?>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-4">
 
-                                    <article class="timeline-item rounded-4 p-md-4 p-3 mb-4" data-reveal>
+                                    <article class="timeline-item rounded-4 p-md-4 p-3 h-100" data-reveal>
                                         <span class="timeline-year"><?php echo esc_html($item['periodo']); ?></span>
                                         <h3 class="h5 mb-2 text-light"><?php echo esc_html($item['titulo']); ?></h3>
                                         <p class="mb-0 text-light opacity-75"><?php echo esc_html($item['descricao']); ?></p>

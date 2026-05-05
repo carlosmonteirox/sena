@@ -17,6 +17,18 @@ if (! defined('ABSPATH')) {
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
+
+  <style>
+    .pagination .page-numbers {
+      min-width: 44px !important;
+      height: 44px !important;
+      padding: 12px !important;
+      margin-right: 5px !important;
+      border-radius: 15px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+    }
+  </style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -30,7 +42,7 @@ if (! defined('ABSPATH')) {
 
             <div class="d-flex gap-3">
               <a class="navbar-brand me-3" href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-avatar.webp" alt="Logo" height="44">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-ulysses.webp" alt="Logo" height="44">
               </a>
             </div>
 

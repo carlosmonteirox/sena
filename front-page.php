@@ -8,6 +8,7 @@
 get_header();
 
 get_template_part('template-parts/sections/section', 'hero');
+get_template_part('template-parts/sections/section', 'candidatos');
 get_template_part('template-parts/sections/section', 'propostas');
 get_template_part('template-parts/sections/section', 'biografia');
 get_template_part('template-parts/sections/section', 'manifesto');

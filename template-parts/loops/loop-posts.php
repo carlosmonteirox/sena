@@ -18,7 +18,7 @@ if (! defined('ABSPATH')) {
         <?php endwhile; ?>
     </div>
 
-    <nav class="mt-4" aria-label="Paginação" data-reveal>
+    <nav class="my-4" aria-label="Paginação">
         <?php
         the_posts_pagination([
             'mid_size'  => 1,

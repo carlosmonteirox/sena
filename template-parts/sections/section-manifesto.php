@@ -9,7 +9,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 ?>
-<section id="manifesto" class="section-space py-md-5 py-4">
+<section id="manifesto" class="section-space py-md-5 py-4 d-none">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/capa-manifesto.webp" alt="" class="capa-manifesto">
 
     <div class="container-fluid py-md-5 py-4">
@@ -37,7 +37,7 @@ if (! defined('ABSPATH')) {
                                     <div class="row align-items-center justify-content-center mb-5">
                                         <div class="col-md-10">
                                             <div class="ratio ratio-16x9">
-                                                <iframe src="https://www.youtube.com/embed/18rFVyqLXlg?rel=0" title="YouTube video" allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/?rel=0" title="YouTube video" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>

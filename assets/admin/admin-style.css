@@ -1,0 +1,138 @@
+/* Padronizando fonts no painel administrativo */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+.editor-content,
+.block-editor-writing-flow {
+  font-family: Arial, sans-serif !important;
+}
+
+.block-editor-block-list__block {
+  font-family: Arial, sans-serif !important;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+/* Input group - Input + Button */
+.input-group-admin {
+  display: flex;
+}
+.input-group-admin .form-control {
+  width: 100%;
+}
+.input-group-admin .copy-shortcode {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 2.15384615;
+  min-height: 30px;
+  margin: 0;
+  padding: 0 10px;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  color: #4c008b;
+  border-color: #4c008b;
+  background: #f6f7f7;
+}
+
+/* Adicionando altura limite nas imagens do painel admin */
+.ad_imagem .acf-input img {
+  width: auto;
+  max-height: 200px !important;
+}
+
+/* Removendo a mensagem de atualização do ACF */
+#advanced-custom-fields-pro-update td {
+  height: 1px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.1) !important;
+}
+#advanced-custom-fields-pro-update td .update-message {
+  display: none;
+}
+
+/* Largura da coluna de Visualiações e Cliques */
+th.manage-column.column-views,
+th.manage-column.column-clicks,
+th.manage-column.column-contagem_acessos {
+  width: 100px !important;
+}
+
+/* Removendo campos desnecessários do perfil de usuário */
+#your-profile .user-url-wrap + tr,
+#your-profile h2:nth-of-type(4) {
+  display: none;
+}
+#your-profile .user-twitter-wrap,
+#your-profile .user-facebook-wrap,
+#your-profile .user-additional_profile_urls-wrap,
+#your-profile .user-facebook_profile-wrap,
+#your-profile .user-twitter_profile-wrap,
+#your-profile .user-linkedin_profile-wrap,
+#your-profile .user-xing_profile-wrap,
+#your-profile .user-github_profile-wrap {
+  display: none;
+}
+.rank-math-metabox-wrap.postbox {
+  display: none;
+}
+
+/*
+LAYOUT
+*/
+/* Menu */
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+  width: 190px;
+}
+#adminmenu .wp-submenu {
+  left: 190px;
+}
+/* Conteúdo */
+#wpcontent,
+#wpfooter {
+  margin-left: 190px;
+}
+
+/*
+SEPARADOR MENU
+*/
+#adminmenu {
+  li.wp-menu-separator {
+    height: 1px;
+    margin: 6px 0px;
+    div.separator {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+
+/*
+ACF STYLES
+*/
+.acf-field .acf-label label {
+  font-size: 13px !important;
+}
+.acf-field .acf-input input[type=text] {
+  /* padding: 6px 8px !important; */
+}
+.acf-fields.-border {
+  border-radius: 3px !important;
+}
+
+/*
+LOGO PARCEIROS
+*/
+.logo_parceiro img {
+  max-height: 40px !important;
+}

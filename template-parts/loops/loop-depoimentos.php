@@ -13,28 +13,54 @@ $query = $args['query'] ?? null;
 
 $fallback = [
     [
-        'quote'  => 'Precisamos de uma gestão técnica e próxima da realidade de quem está no campo e na obra.',
-        'author' => 'Eng. Civil - Goiânia',
+        'quote'  => 'Tô fechado com o Ulysses. É o único que realmente conhece o CREA por dentro e sabe o que precisa mudar.',
+        'author' => 'Advogado - Goiânia',
+        'image'  => '/assets/img/depo/homem-01.jpg',
     ],
     [
-        'quote'  => 'A proposta de inovação e desburocratização é o caminho para fortalecer nossa profissão.',
-        'author' => 'Eng. Agrônoma - Rio Verde',
+        'quote'  => 'A gente precisa de alguém que já viveu a engenharia na prática. Ulysses representa isso.',
+        'author' => 'Eng. Mecânico - Anápolis',
+        'image'  => '/assets/img/depo/homem-02.jpg',
     ],
     [
-        'quote'  => 'Uma liderança com visão estratégica para conectar o CREA às demandas atuais da engenharia.',
-        'author' => 'Tecnólogo - Anápolis',
+        'quote'  => 'Não dá mais pra pagar anuidade e não ter retorno. Com o Ulysses, vejo uma mudança de verdade.',
+        'author' => 'Eng. Eletricista - Aparecida de Goiânia',
+        'image'  => '/assets/img/depo/homem-03.jpg',
     ],
     [
-        'quote'  => 'As propostas apresentam soluções práticas para valorizar quem está na linha de frente da engenharia.',
-        'author' => 'Eng. de Segurança - Aparecida de Goiânia',
+        'quote'  => 'Ele sabe como funciona obra, gestão e o CREA. Pra mim, é o mais preparado.',
+        'author' => 'Eng. Civil - Rio Verde',
+        'image'  => '/assets/img/depo/homem-04.jpg',
     ],
     [
-        'quote'  => 'Queremos um conselho mais ágil, moderno e comprometido com o desenvolvimento de Goiás.',
-        'author' => 'Arquiteta e Urbanista - Luziânia',
+        'quote'  => 'Ulysses tem visão e experiência. É o tipo de liderança que a engenharia precisa agora.',
+        'author' => 'Eng. de Produção - Catalão',
+        'image'  => '/assets/img/depo/homem-05.jpg',
     ],
     [
-        'quote'  => 'É hora de fortalecer a formação continuada e aproximar o CREA dos profissionais do interior.',
-        'author' => 'Eng. Ambiental - Catalão',
+        'quote'  => 'Tô fechada com o Ulysses. Ele pensa no profissional e não só na estrutura do CREA.',
+        'author' => 'Eng. Agrônoma - Jataí',
+        'image'  => '/assets/img/depo/mulher-01.jpg',
+    ],
+    [
+        'quote'  => 'Finalmente alguém falando de valorização de verdade. A gente precisa disso.',
+        'author' => 'Eng. Ambiental - Goiânia',
+        'image'  => '/assets/img/depo/mulher-02.jpg',
+    ],
+    [
+        'quote'  => 'Ele traz propostas que fazem sentido pra quem está no dia a dia da engenharia.',
+        'author' => 'Eng. Civil - Luziânia',
+        'image'  => '/assets/img/depo/mulher-03.jpg',
+    ],
+    [
+        'quote'  => 'O CREA precisa mudar, e o Ulysses é quem tem coragem e preparo pra isso.',
+        'author' => 'Eng. de Segurança - Anápolis',
+        'image'  => '/assets/img/depo/mulher-04.jpg',
+    ],
+    [
+        'quote'  => 'Eu quero um CREA mais próximo e mais justo. Por isso, tô com o Ulysses.',
+        'author' => 'Arquiteta e Urbanista - Aparecida de Goiânia',
+        'image'  => '/assets/img/depo/mulher-05.jpg',
     ],
 ];
 
@@ -72,11 +98,11 @@ $slides = $prepare_slides($depoimentos, 6);
         <div class="swiper-wrapper">
             <?php foreach ($slides as $item) : ?>
                 <div class="swiper-slide">
-                    <article class="quote-card h-100">
+                    <article class="quote-card">
                         <p class="quote-text mb-3">"<?php echo esc_html($item['quote']); ?>"</p>
                         <div class="d-flex align-items-center">
-                            <div class="flex-shrink-1 me-2">
-                                <img src="https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-12.jpg" class="rounded-circle" width="30" height="30">
+                            <div class="flex-shrink-1 me-2 d-none">
+                                <img src="<?php echo get_template_directory_uri(); ?><?php echo esc_html($item['image']); ?>" class="rounded-circle" width="30" height="30">
                             </div>
                             <div class="w-100">
                                 <p class="quote-author mb-0"><?php echo esc_html($item['author']); ?></p>

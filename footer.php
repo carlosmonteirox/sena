@@ -11,13 +11,22 @@ if (! defined('ABSPATH')) {
 ?>
 </div>
 
+<div class="line-design">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
 <footer class="site-footer bg-white py-5">
     <div class="container">
-        <div class="row gx-5 align-items-start">
+        <div class="row gx-md-5 align-items-start">
 
           <div class="col-lg-4">
               <h2 class="h1 display-6 fw-bold mb-3" style="color: var(--sena-blue-700);">Bora conversar?</h2>
-              <p>Entre em nosso grupo de WhatsApp <a class="text-decoration-underline text-info">clicando aqui.</a></p>
+              <p>Entre em nosso grupo de WhatsApp <a class="text-decoration-underline text-info" href="<?php echo esc_url(sena_whatsapp_link()); ?>" target="_blank" rel="noopener noreferrer">clicando aqui.</a></p>
           </div>
 
           <div class="col-lg-6">

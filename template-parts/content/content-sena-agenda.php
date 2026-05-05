@@ -11,6 +11,11 @@ if (! defined('ABSPATH')) {
 ?>
 <article <?php post_class('single-article'); ?> data-reveal>
     <header class="mb-4">
+        <?php
+        if (function_exists('sena_render_breadcrumb')) {
+            sena_render_breadcrumb(get_the_title());
+        }
+        ?>
         <p class="eyebrow mb-2">Agenda</p>
         <h1 class="display-6 mb-3"><?php the_title(); ?></h1>
         <p class="text-muted mb-0"><?php echo esc_html(get_the_date('d/m/Y')); ?></p>

@@ -33,12 +33,3 @@ if (! defined('ABSPATH')) {
         </div>
     </div>
 </section>
-
-<div class="line-design">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>

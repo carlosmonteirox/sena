@@ -32,7 +32,7 @@ $has_posts = $use_custom_query ? $query->have_posts() : have_posts();
         <?php endwhile; ?>
     <?php else : ?>
         <div class="col-12" data-reveal>
-            <div class="alert alert-secondary mb-0"><?php echo esc_html($empty_message); ?></div>
+            <div class="alert alert-primary border-0 rounded-3 mb-0"><?php echo esc_html($empty_message); ?></div>
         </div>
     <?php endif; ?>
 </div>

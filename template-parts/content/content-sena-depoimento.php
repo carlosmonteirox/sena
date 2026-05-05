@@ -10,6 +10,11 @@ if (! defined('ABSPATH')) {
 }
 ?>
 <article <?php post_class('single-article text-center'); ?> data-reveal>
+    <?php
+    if (function_exists('sena_render_breadcrumb')) {
+        sena_render_breadcrumb(get_the_title());
+    }
+    ?>
     <p class="eyebrow mb-2">Depoimento</p>
     <h1 class="h3 mb-4"><?php the_title(); ?></h1>
     <blockquote class="quote-card">

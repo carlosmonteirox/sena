@@ -97,7 +97,7 @@
                         spaceBetween: 24,
                     },
                     1200: {
-                        slidesPerView: 4.2,
+                        slidesPerView: 5.2,
                         spaceBetween: 24,
                     },
                 },
