@@ -18,6 +18,16 @@ if (! defined('ABSPATH')) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php wp_head(); ?>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLTCXGZ862"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HLTCXGZ862');
+  </script>
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
