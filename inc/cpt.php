@@ -19,7 +19,7 @@ function sena_register_campaign_cpts(): void
         'public'       => true,
         'show_in_rest' => true,
         'menu_icon'    => 'dashicons-yes-alt',
-        'supports'     => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+        'supports'     => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'],
         'has_archive'  => true,
         'rewrite'      => ['slug' => 'propostas'],
     ]);
@@ -62,16 +62,63 @@ function sena_register_campaign_cpts(): void
 }
 add_action('init', 'sena_register_campaign_cpts');
 
-function sena_order_propostas_archive_by_registration(WP_Query $query): void
+function sena_order_propostas_listing(WP_Query $query): void
 {
-    if (is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive('sena_proposta')) {
+    if (! $query->is_main_query()) {
         return;
     }
 
-    $query->set('orderby', 'ID');
-    $query->set('order', 'ASC');
+    if (is_admin()) {
+        if ('sena_proposta' !== $query->get('post_type') || $query->get('orderby')) {
+            return;
+        }
+    } elseif (! $query->is_post_type_archive('sena_proposta')) {
+        return;
+    }
+
+    $query->set('orderby', [
+        'menu_order' => 'ASC',
+        'ID'         => 'ASC',
+    ]);
 }
-add_action('pre_get_posts', 'sena_order_propostas_archive_by_registration');
+add_action('pre_get_posts', 'sena_order_propostas_listing');
+
+function sena_add_proposta_order_column(array $columns): array
+{
+    $order_column = [
+        'menu_order' => __('Ordem', 'sena'),
+    ];
+    $title_position = array_search('title', array_keys($columns), true);
+
+    if (false === $title_position) {
+        return array_merge($columns, $order_column);
+    }
+
+    $insert_position = $title_position + 1;
+
+    return array_slice($columns, 0, $insert_position, true)
+        + $order_column
+        + array_slice($columns, $insert_position, null, true);
+}
+add_filter('manage_sena_proposta_posts_columns', 'sena_add_proposta_order_column');
+
+function sena_render_proposta_order_column(string $column_name, int $post_id): void
+{
+    if ('menu_order' !== $column_name) {
+        return;
+    }
+
+    echo esc_html((string) get_post_field('menu_order', $post_id));
+}
+add_action('manage_sena_proposta_posts_custom_column', 'sena_render_proposta_order_column', 10, 2);
+
+function sena_make_proposta_order_column_sortable(array $columns): array
+{
+    $columns['menu_order'] = 'menu_order';
+
+    return $columns;
+}
+add_filter('manage_edit-sena_proposta_sortable_columns', 'sena_make_proposta_order_column_sortable');
 
 function sena_add_default_proposta_terms(): void
 {

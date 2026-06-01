@@ -11,8 +11,10 @@ get_header();
 $propostas_query = sena_query_posts([
     'post_type'      => 'sena_proposta',
     'posts_per_page' => -1,
-    'orderby'        => 'menu_order',
-    'order'          => 'DESC',
+    'orderby'        => [
+        'menu_order' => 'ASC',
+        'ID'         => 'ASC',
+    ],
 ]);
 
 $proposta_terms = get_terms([
