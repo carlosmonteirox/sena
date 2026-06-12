@@ -105,7 +105,7 @@ function sena_enqueue_assets(): void
         );
 
         wp_localize_script('sena-avatar-maker', 'senaAvatarMaker', [
-            'overlayUrl' => get_template_directory_uri() . '/assets/img/avatar-frame.png',
+            'overlayUrl' => get_template_directory_uri() . '/assets/img/avatar-fram-2.png',
             'fileName'   => sanitize_title(get_bloginfo('name') ?: 'sena') . '-foto-perfil.png',
         ]);
     }
